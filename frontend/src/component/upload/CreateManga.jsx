@@ -8,7 +8,6 @@ const CreateManga = () => {
     mangaCover: "",
     mangaLink: "",
     mangaClass: "",
-    websiteRegex: "",
   });
 
   const handleSubmit = async (e) => {
@@ -105,22 +104,7 @@ const CreateManga = () => {
               }
             />
           </div>
-          <div className='mb-3'>
-            <label htmlFor='websiteRegex'>
-              {" "}
-              <strong>websiteRegex</strong>
-            </label>
-            <input
-              required
-              type='text'
-              placeholder='Enter websiteRegex'
-              name='websiteRegex'
-              className='form-control rounded-0'
-              onChange={(e) =>
-                setValues({ ...values, websiteRegex: e.target.value })
-              }
-            />
-          </div>
+
           <button type='submit' className='btn btn-success rounded-0 w-100'>
             Submit Manga
           </button>

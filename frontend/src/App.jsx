@@ -1,11 +1,12 @@
-import MangaPage from "./component/MangaPage";
 import CreateManga from "./component/upload/CreateManga";
 import Home from "./component/home/Home";
+import ExHome from "./component/ghar/ExHome";
 
 const App = () => {
   return (
     <>
-      <Home />
+      <ExHome />
+      {/* <Home /> */}
       <CreateManga />
       {/* <MangaPage /> */}
     </>

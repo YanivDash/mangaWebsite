@@ -16,20 +16,20 @@ const mangaWeb = async (values) => {
     values.mangaCover,
     values.mangaLink,
     values.mangaClass,
-    values.websiteRegex,
   ];
   await scrapTotal(values.mangaLink, values.mangaClass).then((d) => {
     valuesArray.push(d);
   });
 
-  const sql = `INSERT INTO mangalist (\`websiteName\`, \`mangaName\`, \`mangaCover\`, \`mangaLink\`, \`mangaClass\`, \`websiteRegex\`,\`totalChapter\`)VALUES (?, ?, ?, ?, ?, ?, ?)`;
+  const sql = `INSERT INTO mangalist (\`websiteName\`, \`mangaName\`, \`mangaCover\`, \`mangaLink\`, \`mangaClass\`,\`totalChapter\`)VALUES (?, ?, ?, ?, ?, ?)`;
+
   db.query(sql, valuesArray, (err, result) => {
     if (result) {
-      const message = "succesfully uploaded";
+      const message = "succesfull";
       return message;
     } else {
       console.log(err);
-      const message = "error during insert";
+      const message = "error";
       return message;
     }
   });

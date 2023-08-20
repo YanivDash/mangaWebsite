@@ -55,10 +55,6 @@ app.get("/allManga", async (req, res) => {
     res.status(500).json({ error: "An error occurred." });
   }
 });
-const mangaLink =
-  "https://toonily.net/manga/murim-login/chapter-chapterNumberHere/";
-const mangaClass = ".reading-content img";
-scrapTotal(mangaLink, mangaClass);
 
 app.listen(8061, () => {
   console.log("listening on port 8061");
