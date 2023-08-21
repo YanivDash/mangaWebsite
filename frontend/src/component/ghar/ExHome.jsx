@@ -1,32 +1,13 @@
-import { useEffect, useState } from "react";
-import { fetchManga } from "../../../apiCall";
+import { useState } from "react";
 import ExMangaCard from "./ExMangaCard";
-
-import { allMangaAdd } from "../../reducers/allMangaReducer";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 const Home = () => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const mangas = useSelector((state) => state.allManga);
 
   let data = mangas.allMangas;
-
-  const dispatch = useDispatch();
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const manga = await fetchManga();
-        dispatch(allMangaAdd(manga.data.result));
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-        setLoading(false);
-        throw error;
-      }
-    };
-
-    fetchData();
-  }, [dispatch, data]);
+  if (!data) setLoading(true);
 
   return (
     <div style={{ display: "flex" }}>
