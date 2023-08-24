@@ -17,6 +17,14 @@
 .navbar_manga {
   width: 100%;
 }
+
+.navbar_icons {
+  font-size: 30px;
+}
+
+.navbar_menu_slide {
+  display: none;
+}
 .navbar_manga_lists {
   display: flex;
   list-style: none;
@@ -29,7 +37,6 @@
   justify-content: flex-end;
 }
 .navbar_right p {
-  font-size: 30px;
   font-weight: bolder;
   padding: 0;
   margin: 0;
@@ -55,6 +62,9 @@
     text-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 30px yellow; /* Adjust the shadow size as needed */
   }
 }
+.navbar_mobile {
+  display: none;
+}
 
 .navbar_search_input {
   font-size: 19px;
@@ -66,7 +76,7 @@
   display: block;
   margin: 0 auto;
   color: black;
-  border: solid 5px #6f42c1;
+  border: solid 2px #6f42c1;
   border-top: 0;
   border-end-end-radius: 50px;
   /* border-end-start-radius: 50px; */
@@ -94,4 +104,95 @@
   .navbar_none {
     display: none;
   }
+}
+
+@media screen and (max-width: 780px) {
+  .navbar_manga_lists {
+    display: none;
+  }
+  .navbar_menu_slide {
+    display: block;
+  }
+  .navbar_mobile {
+    display: flex;
+  }
+  .navbar_links_Container {
+    padding: 10px;
+  }
+}
+
+/* mobile navbar */
+.navbar_mobile {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: start;
+  font-size: 18px;
+
+  height: 100vh;
+  list-style: none;
+  position: absolute;
+  z-index: 2;
+}
+
+.navbar_mobile_manga {
+  width: 266px;
+  height: 100vh;
+  padding-left: 30px;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.navbar_mobile__manga_lists {
+  padding: 0;
+  margin-bottom: 40px;
+  list-style: none;
+}
+
+.navbar_mobile__manga_type {
+  list-style: none;
+
+  justify-content: space-around;
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+
+.navbar_mobile li {
+  border-radius: 4px;
+  border: 2px solid transparent;
+  padding-left: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 16px;
+  border-end-end-radius: 0;
+  border-top-right-radius: 0;
+}
+.navbar_mobile li:hover {
+  cursor: pointer;
+  color: aqua;
+  background-color: grey;
+  border-color: #6f42c1;
+}
+
+/* animatiion for mobile navbar  */
+.navbar_icon_inverted {
+  transform: rotate(180deg);
+  transition: all 0.5s ease-in-out;
+}
+
+.navbar_icon_simple {
+  transform: rotate(0deg);
+  transition: all 0.5s ease-in-out;
+}
+
+.navbar_mobile_show {
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: translateX(0);
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar_mobile_hide {
+  width: 0;
+  transform: translateX(-300px);
+  background-color: transparent;
+  transition: all 0.2s ease-in-out;
 }

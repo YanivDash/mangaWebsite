@@ -1,0 +1,128 @@
+.banner_container {
+  position: relative;
+  padding: 0;
+  display: block;
+  width: 100vw;
+  height: 500px;
+  overflow: hidden;
+  margin: 20px 0 20px 0;
+}
+
+.banner_blur_img {
+  z-index: -1;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  object-fit: contain;
+}
+
+.banner_blur_img_cover {
+  filter: blur(20px);
+  width: 2800px;
+  height: 2800px;
+  transform: translateY(-1800px);
+}
+.banner_manga_img {
+  position: absolute;
+  z-index: 1;
+  border: solid 30px white;
+  height: fit-content;
+  right: 300px;
+  transform: rotate(20deg) translateY(-120px);
+}
+.banner_manga_img_cover {
+  width: 310px;
+  height: 650px;
+
+  object-fit: cover;
+}
+
+/* BANNER TEXT HERE */
+.banner_header {
+  display: flex;
+  flex-direction: column;
+
+  align-items: self-start;
+  position: absolute;
+  width: 40%;
+
+  top: 40px;
+  left: 30px;
+}
+.banner_header h1 {
+  margin-bottom: 0;
+}
+
+.banner_button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.banner_read_button {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.banner_read_button button {
+  border-radius: 0;
+  padding: 10px 20px;
+  font-size: 25px;
+  color: black;
+}
+.banner_read_button_read {
+  background-color: yellow;
+}
+.banner_read_button_chapter {
+  background-color: white;
+}
+
+.banner_navigate {
+  display: flex;
+  margin-top: 20px;
+  gap: 20px;
+  justify-content: center;
+}
+
+.banner_navigate_icons {
+  font-size: 40px;
+}
+
+/* animation comes here  */
+
+.banner_manga_img {
+  animation: scale 0.3s ease-in;
+}
+
+@keyframes scale {
+  0% {
+    scale: 1;
+    filter: blur(0);
+  }
+  25% {
+    scale: 1.1;
+    filter: blur(20px);
+  }
+  100% {
+    scale: 1;
+    filter: blur(0);
+  }
+}
+
+.banner_blur_img_cover {
+  animation: blured 0.2s ease-in-out;
+}
+
+@keyframes blured {
+  0% {
+    filter: blur(0);
+  }
+  25% {
+    filter: blur(50px);
+  }
+  100% {
+    filter: blur(20px);
+  }
+}
