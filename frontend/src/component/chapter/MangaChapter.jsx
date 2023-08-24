@@ -6,7 +6,7 @@ import { Link, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addChapterImg } from "../../reducers/chapterImgReducer";
 
-const MangaPage = () => {
+const MangaChapter = () => {
   let urlParams = useParams();
   let { id, chapter } = urlParams;
 
@@ -80,4 +80,4 @@ const MangaPage = () => {
   );
 };
 
-export default MangaPage;
+export default MangaChapter;
